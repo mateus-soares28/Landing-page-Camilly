@@ -169,8 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
             textElements.push(element);
         });
 
-        if (hasSplitText) {
-            textElements.forEach(textElement => {
+        textElements.forEach(textElement => {
+            const shouldSplitText = hasSplitText && !textElement.matches("p, li, a, button");
+
+            if (shouldSplitText) {
                 const split = SplitText.create(textElement, {
                     type: "lines, chars",
                     linesClass: "gsap-text-line"
@@ -197,23 +199,22 @@ document.addEventListener("DOMContentLoaded", () => {
                         from: "start"
                     }
                 });
+                return;
+            }
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: textElement,
+                    start: "top 88%",
+                    once: true
+                }
+            }).from(textElement, {
+                autoAlpha: 0,
+                y: 28,
+                duration: 1.15,
+                ease: "power4.out"
             });
-        } else {
-            textElements.forEach(textElement => {
-                gsap.timeline({
-                    scrollTrigger: {
-                        trigger: textElement,
-                        start: "top 88%",
-                        once: true
-                    }
-                }).from(textElement, {
-                    autoAlpha: 0,
-                    y: 28,
-                    duration: 1.15,
-                    ease: "power4.out"
-                });
-            });
-        }
+        });
 
         ScrollTrigger.refresh();
     }
