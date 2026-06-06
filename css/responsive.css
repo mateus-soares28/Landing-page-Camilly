@@ -1,7 +1,4 @@
-/* Responsividade
-   Desktop amplo usa o CSS principal. Este arquivo cobre MacBook, tablet e celular. */
 
-/* MacBook */
 @media (min-width: 1025px) and (max-width: 1440px) {
   body::after {
     display: none;
@@ -371,7 +368,7 @@
   }
 
   .contact-badge {
-    right: 4%;
+    left: 68%;
     top: 18%;
   }
 
@@ -772,10 +769,19 @@
   }
 
   .contact-badge {
-    right: 0;
+    width: 300px;
+    left: 120px;
     top: 14%;
     transform: scale(0.82);
     transform-origin: top right;
+  }
+
+  .badge-name{
+    font-size: 12px;
+  }
+
+  .badge-text{
+    font-size: 10px;
   }
 
   .site-footer {
