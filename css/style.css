@@ -1280,7 +1280,7 @@ body::after {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr 1fr 2fr;
+  grid-template-columns: minmax(230px, 1.85fr) minmax(120px, 0.9fr) minmax(200px, 1.35fr) minmax(260px, 1.55fr);
   gap: 2rem;
   align-items: start;
   border-bottom: 1px solid rgba(216, 179, 181, 0.3);
@@ -1338,6 +1338,10 @@ body::after {
   gap: 10px;
 }
 
+.footer-socials:empty {
+  display: none;
+}
+
 .social-icon {
   display: inline-block;
   width: 20px;
@@ -1384,11 +1388,15 @@ body::after {
   background-color: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(216, 179, 181, 0.3);
   border-radius: 16px;
-  padding: 2rem 1.5rem;
+  width: 100%;
+  min-height: 280px;
+  padding: 2.25rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  justify-self: end;
 }
 
 .cta-icon-wrapper {
@@ -1440,4 +1448,169 @@ body::after {
   color: var(--text-light);
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+/* =========================================
+   SEÇÃO: INSTAGRAM
+   ========================================= */
+.instagram-section {
+    padding: 6rem 5% 4rem;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.instagram-container {
+    width: 100%;
+    max-width: 1100px; /* Um pouco menor para manter a proporção da imagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.instagram-header {
+    margin-bottom: 3rem;
+}
+
+.instagram-title {
+    color: var(--text-dark);
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 4vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.instagram-subtitle {
+    color: var(--text-light);
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.instagram-description {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+}
+
+.instagram-description strong {
+    font-weight: 700;
+}
+
+.instagram-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* --- Coluna da Esquerda (CTA) --- */
+.instagram-cta {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.insta-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--text-dark);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.icon-instagram-large::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--text-dark);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'%3E%3C/rect%3E%3Cpath d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'%3E%3C/path%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'%3E%3C/line%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='5' ry='5'%3E%3C/rect%3E%3Cpath d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'%3E%3C/path%3E%3Cline x1='17.5' y1='6.5' x2='17.51' y2='6.5'%3E%3C/line%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.insta-cta-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.instagram-cta .card-divider-small {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    opacity: 0.7;
+}
+
+.insta-cta-text {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* --- Coluna da Direita (Perfil do Instagram) --- */
+.instagram-mockup {
+    flex: 2;
+    min-width: 350px;
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: 24px;
+    padding: clamp(0.75rem, 1.4vw, 1.1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    box-shadow: 0 24px 60px rgba(105, 61, 67, 0.12);
+}
+
+.instagram-profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.instagram-image-frame {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: var(--white);
+    line-height: 0;
+}
+
+.instagram-image-frame::after {
+    content: "";
+    position: absolute;
+    left: 47.4%;
+    top: 25.5%;
+    width: 20.6%;
+    height: 5%;
+    background-color: var(--white);
+    border-radius: 999px;
+    pointer-events: none;
 }
